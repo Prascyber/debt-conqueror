@@ -112,7 +112,7 @@ export default function Login() {
               </Button>
             </div>
             <p className="text-xs text-muted-foreground mt-2 text-center">
-              Password: password123
+
             </p>
           </div>
         </CardContent>

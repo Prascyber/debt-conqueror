@@ -1,73 +1,100 @@
-# Welcome to your Lovable project
+Debt Conqueror — Frontend Engineer Project
+Overview
 
-## Project info
+Debt Conqueror is a modular Debt Collection Dashboard designed to simulate a production-ready financial management tool.
+It focuses on real-time case tracking, agent management, and performance analytics, built with scalable architecture and clean UI.
 
-**URL**: https://lovable.dev/projects/8547d853-9f1f-4634-9d7b-ad7605ebf960
+🚀 Objective
+Design and develop a fully functional debt collection dashboard with:
 
-## How can I edit this code?
+Real-time data representation
 
-There are several ways of editing your application.
+Role-based access (Admin & Agent)
 
-**Use Lovable**
+Case management workflows
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8547d853-9f1f-4634-9d7b-ad7605ebf960) and start prompting.
+Integrated API simulation
 
-Changes made via Lovable will be committed automatically to this repo.
+State persistence and scalability
 
-**Use your preferred IDE**
+************************************************************
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Core Features
+1. Authentication & Role-Based Access
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Mock JWT login (simulated token).
 
-Follow these steps:
+Admin → full dashboard, agent management, analytics.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Agent → limited to assigned cases and task updates.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. Dashboard Overview
 
-# Step 3: Install the necessary dependencies.
-npm i
+Display KPIs: Total Cases, Resolved Cases, Pending Amount, Agent Efficiency.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Includes a chart (Bar / Line / Pie) for performance metrics using Recharts.
+
+Simulated real-time data updates using polling or socket mock.
+
+3. Case Management
+
+Table view with sorting, filtering, and search.
+
+On click → detailed modal view showing:
+
+Borrower details
+
+Payment history
+
+Case timeline (Assigned → Follow-up → Resolved → Closed)
+
+Status update and notes (mock PUT/POST).
+
+4. Agent Management (Admin Only)
+
+CRUD operations for agents.
+
+View workload summary (assigned cases, recovery %).
+
+Assign/unassign cases dynamically.
+
+5. Activity Log / Audit Trail
+
+Track all user actions (e.g., “Agent updated case status to Follow-up”).
+
+Display logs in a collapsible timeline.
+
+6. Performance Optimization
+
+Lazy loading with React.lazy and Suspense.
+
+Virtualized tables (react-window).
+
+Centralized API service layer for abstraction.
+
+
+********************************************************************************
+
+Setup Instructions
+1️⃣ Clone the Repository
+git clone https://github.com/Prascyber/debt-conqueror-68.git
+cd debt-conqueror-68
+
+2️⃣ Install Dependencies
+npm install
+
+3️⃣ Run the Development Server
 npm run dev
-```
 
-**Edit a file directly in GitHub**
+4️⃣ Open in Browser
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Visit http://localhost:5173
 
-**Use GitHub Codespaces**
+🌐 Deployment
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+You can deploy easily to Vercel or Netlify:
 
-## What technologies are used for this project?
+npm run build
 
-This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/8547d853-9f1f-4634-9d7b-ad7605ebf960) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Then upload the /dist folder or connect your GitHub repo directly to Vercel.
